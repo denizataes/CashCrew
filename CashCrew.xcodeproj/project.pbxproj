@@ -11,6 +11,10 @@
 		A0776CF12A5489A6008ECC50 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0776CF02A5489A6008ECC50 /* ContentView.swift */; };
 		A0776CF32A5489A7008ECC50 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0776CF22A5489A7008ECC50 /* Assets.xcassets */; };
 		A0776CF62A5489A7008ECC50 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0776CF52A5489A7008ECC50 /* Preview Assets.xcassets */; };
+		A0776D072A548B17008ECC50 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0776D062A548B17008ECC50 /* LoginView.swift */; };
+		A0776D092A548B65008ECC50 /* View_Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0776D082A548B65008ECC50 /* View_Extensions.swift */; };
+		A0776D0C2A548F7E008ECC50 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0776D0B2A548F7E008ECC50 /* Color.swift */; };
+		A0776D2A2A549CC5008ECC50 /* BodoniModa-Normal.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A0776D292A549CC5008ECC50 /* BodoniModa-Normal.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +23,10 @@
 		A0776CF02A5489A6008ECC50 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A0776CF22A5489A7008ECC50 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A0776CF52A5489A7008ECC50 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		A0776D062A548B17008ECC50 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		A0776D082A548B65008ECC50 /* View_Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View_Extensions.swift; sourceTree = "<group>"; };
+		A0776D0B2A548F7E008ECC50 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		A0776D292A549CC5008ECC50 /* BodoniModa-Normal.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "BodoniModa-Normal.ttf"; path = "../../../../Downloads/Bodoni_Moda/BodoniModa-Normal.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +59,13 @@
 		A0776CED2A5489A6008ECC50 /* CashCrew */ = {
 			isa = PBXGroup;
 			children = (
+				A0776D292A549CC5008ECC50 /* BodoniModa-Normal.ttf */,
+				A0776D022A548AA3008ECC50 /* Manager */,
+				A0776CFC2A548A62008ECC50 /* Core */,
+				A0776CFF2A548A71008ECC50 /* Extension */,
+				A0776D002A548A76008ECC50 /* Utils */,
+				A0776CFE2A548A6C008ECC50 /* Service */,
+				A0776CFD2A548A65008ECC50 /* Model */,
 				A0776CEE2A5489A6008ECC50 /* CashCrewApp.swift */,
 				A0776CF02A5489A6008ECC50 /* ContentView.swift */,
 				A0776CF22A5489A7008ECC50 /* Assets.xcassets */,
@@ -65,6 +80,75 @@
 				A0776CF52A5489A7008ECC50 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		A0776CFC2A548A62008ECC50 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				A0776D032A548AC9008ECC50 /* Login */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		A0776CFD2A548A65008ECC50 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A0776CFE2A548A6C008ECC50 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		A0776CFF2A548A71008ECC50 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				A0776D082A548B65008ECC50 /* View_Extensions.swift */,
+				A0776D0B2A548F7E008ECC50 /* Color.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		A0776D002A548A76008ECC50 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		A0776D022A548AA3008ECC50 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		A0776D032A548AC9008ECC50 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				A0776D052A548ADA008ECC50 /* ViewModels */,
+				A0776D042A548AD0008ECC50 /* Views */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		A0776D042A548AD0008ECC50 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A0776D062A548B17008ECC50 /* LoginView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A0776D052A548ADA008ECC50 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,6 +209,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0776D2A2A549CC5008ECC50 /* BodoniModa-Normal.ttf in Resources */,
 				A0776CF62A5489A7008ECC50 /* Preview Assets.xcassets in Resources */,
 				A0776CF32A5489A7008ECC50 /* Assets.xcassets in Resources */,
 			);
@@ -137,7 +222,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0776D072A548B17008ECC50 /* LoginView.swift in Sources */,
 				A0776CF12A5489A6008ECC50 /* ContentView.swift in Sources */,
+				A0776D092A548B65008ECC50 /* View_Extensions.swift in Sources */,
+				A0776D0C2A548F7E008ECC50 /* Color.swift in Sources */,
 				A0776CEF2A5489A6008ECC50 /* CashCrewApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -270,6 +358,7 @@
 				DEVELOPMENT_TEAM = 68KQTL44VS;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CashCrew/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -299,6 +388,7 @@
 				DEVELOPMENT_TEAM = 68KQTL44VS;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CashCrew/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
