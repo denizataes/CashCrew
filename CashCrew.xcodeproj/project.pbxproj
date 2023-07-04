@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A012CF1B2A54ADCC005E1EE8 /* NewLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A012CF1A2A54ADCC005E1EE8 /* NewLoginView.swift */; };
+		A012CF1D2A54ADDF005E1EE8 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A012CF1C2A54ADDF005E1EE8 /* LoginViewModel.swift */; };
 		A0776CEF2A5489A6008ECC50 /* CashCrewApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0776CEE2A5489A6008ECC50 /* CashCrewApp.swift */; };
 		A0776CF12A5489A6008ECC50 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0776CF02A5489A6008ECC50 /* ContentView.swift */; };
 		A0776CF32A5489A7008ECC50 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0776CF22A5489A7008ECC50 /* Assets.xcassets */; };
@@ -14,10 +16,11 @@
 		A0776D072A548B17008ECC50 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0776D062A548B17008ECC50 /* LoginView.swift */; };
 		A0776D092A548B65008ECC50 /* View_Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0776D082A548B65008ECC50 /* View_Extensions.swift */; };
 		A0776D0C2A548F7E008ECC50 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0776D0B2A548F7E008ECC50 /* Color.swift */; };
-		A0776D2A2A549CC5008ECC50 /* BodoniModa-Normal.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A0776D292A549CC5008ECC50 /* BodoniModa-Normal.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A012CF1A2A54ADCC005E1EE8 /* NewLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewLoginView.swift; sourceTree = "<group>"; };
+		A012CF1C2A54ADDF005E1EE8 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		A0776CEB2A5489A6008ECC50 /* CashCrew.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CashCrew.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0776CEE2A5489A6008ECC50 /* CashCrewApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashCrewApp.swift; sourceTree = "<group>"; };
 		A0776CF02A5489A6008ECC50 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -26,7 +29,6 @@
 		A0776D062A548B17008ECC50 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		A0776D082A548B65008ECC50 /* View_Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View_Extensions.swift; sourceTree = "<group>"; };
 		A0776D0B2A548F7E008ECC50 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
-		A0776D292A549CC5008ECC50 /* BodoniModa-Normal.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "BodoniModa-Normal.ttf"; path = "../../../../Downloads/Bodoni_Moda/BodoniModa-Normal.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,7 +61,6 @@
 		A0776CED2A5489A6008ECC50 /* CashCrew */ = {
 			isa = PBXGroup;
 			children = (
-				A0776D292A549CC5008ECC50 /* BodoniModa-Normal.ttf */,
 				A0776D022A548AA3008ECC50 /* Manager */,
 				A0776CFC2A548A62008ECC50 /* Core */,
 				A0776CFF2A548A71008ECC50 /* Extension */,
@@ -140,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				A0776D062A548B17008ECC50 /* LoginView.swift */,
+				A012CF1A2A54ADCC005E1EE8 /* NewLoginView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -147,6 +149,7 @@
 		A0776D052A548ADA008ECC50 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				A012CF1C2A54ADDF005E1EE8 /* LoginViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -209,7 +212,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A0776D2A2A549CC5008ECC50 /* BodoniModa-Normal.ttf in Resources */,
 				A0776CF62A5489A7008ECC50 /* Preview Assets.xcassets in Resources */,
 				A0776CF32A5489A7008ECC50 /* Assets.xcassets in Resources */,
 			);
@@ -227,6 +229,8 @@
 				A0776D092A548B65008ECC50 /* View_Extensions.swift in Sources */,
 				A0776D0C2A548F7E008ECC50 /* Color.swift in Sources */,
 				A0776CEF2A5489A6008ECC50 /* CashCrewApp.swift in Sources */,
+				A012CF1B2A54ADCC005E1EE8 /* NewLoginView.swift in Sources */,
+				A012CF1D2A54ADDF005E1EE8 /* LoginViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
