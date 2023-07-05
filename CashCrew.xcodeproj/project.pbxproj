@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		A012CF1B2A54ADCC005E1EE8 /* NewLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A012CF1A2A54ADCC005E1EE8 /* NewLoginView.swift */; };
 		A012CF1D2A54ADDF005E1EE8 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A012CF1C2A54ADDF005E1EE8 /* LoginViewModel.swift */; };
+		A012CF222A55E69E005E1EE8 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A012CF212A55E69E005E1EE8 /* RegisterView.swift */; };
+		A012CF242A55E6A9005E1EE8 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A012CF232A55E6A9005E1EE8 /* RegisterViewModel.swift */; };
+		A012CF262A55F614005E1EE8 /* CustomLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A012CF252A55F614005E1EE8 /* CustomLoadingView.swift */; };
 		A0776CEF2A5489A6008ECC50 /* CashCrewApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0776CEE2A5489A6008ECC50 /* CashCrewApp.swift */; };
 		A0776CF12A5489A6008ECC50 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0776CF02A5489A6008ECC50 /* ContentView.swift */; };
 		A0776CF32A5489A7008ECC50 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0776CF22A5489A7008ECC50 /* Assets.xcassets */; };
@@ -21,6 +24,9 @@
 /* Begin PBXFileReference section */
 		A012CF1A2A54ADCC005E1EE8 /* NewLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewLoginView.swift; sourceTree = "<group>"; };
 		A012CF1C2A54ADDF005E1EE8 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		A012CF212A55E69E005E1EE8 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		A012CF232A55E6A9005E1EE8 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
+		A012CF252A55F614005E1EE8 /* CustomLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLoadingView.swift; sourceTree = "<group>"; };
 		A0776CEB2A5489A6008ECC50 /* CashCrew.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CashCrew.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0776CEE2A5489A6008ECC50 /* CashCrewApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashCrewApp.swift; sourceTree = "<group>"; };
 		A0776CF02A5489A6008ECC50 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -42,6 +48,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A012CF1E2A55E678005E1EE8 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				A012CF202A55E688005E1EE8 /* Views */,
+				A012CF1F2A55E682005E1EE8 /* ViewModels */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		A012CF1F2A55E682005E1EE8 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				A012CF232A55E6A9005E1EE8 /* RegisterViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		A012CF202A55E688005E1EE8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A012CF212A55E69E005E1EE8 /* RegisterView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		A0776CE22A5489A6008ECC50 = {
 			isa = PBXGroup;
 			children = (
@@ -86,6 +117,7 @@
 		A0776CFC2A548A62008ECC50 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				A012CF1E2A55E678005E1EE8 /* Register */,
 				A0776D032A548AC9008ECC50 /* Login */,
 			);
 			path = Core;
@@ -117,6 +149,7 @@
 		A0776D002A548A76008ECC50 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				A012CF252A55F614005E1EE8 /* CustomLoadingView.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -229,7 +262,10 @@
 				A0776D092A548B65008ECC50 /* View_Extensions.swift in Sources */,
 				A0776D0C2A548F7E008ECC50 /* Color.swift in Sources */,
 				A0776CEF2A5489A6008ECC50 /* CashCrewApp.swift in Sources */,
+				A012CF222A55E69E005E1EE8 /* RegisterView.swift in Sources */,
 				A012CF1B2A54ADCC005E1EE8 /* NewLoginView.swift in Sources */,
+				A012CF242A55E6A9005E1EE8 /* RegisterViewModel.swift in Sources */,
+				A012CF262A55F614005E1EE8 /* CustomLoadingView.swift in Sources */,
 				A012CF1D2A54ADDF005E1EE8 /* LoginViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

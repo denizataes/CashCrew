@@ -23,6 +23,7 @@ struct NewLoginView: View {
                 .opacity(0.7)
                 .ignoresSafeArea()
 
+            
             // Login Views
             VStack{
                 headerView
@@ -57,9 +58,19 @@ struct NewLoginView: View {
 //            }
             
         }
-        .edgesIgnoringSafeArea(.bottom)
-           
-      
+        .overlay{
+            //LoadingView(show: $viewModel.isLoading)
+            if vm.isLoading{
+                CustomLoadingView()
+            }
+        }
+     
+        
+        if vm.isRegisterViewActive {
+            RegisterView()
+                .transition(.move(edge: .leading))
+        }
+        
     }
 }
 
@@ -81,6 +92,7 @@ extension NewLoginView {
                         .font(vm.loginStep == .phone ?  .title3 : .title2)
                         .fontWeight(.semibold)
                         .padding()
+                    
                     if vm.loginStep == .otp {
                         
                         Image(systemName: "square.and.pencil")

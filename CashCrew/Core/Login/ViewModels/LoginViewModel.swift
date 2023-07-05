@@ -17,10 +17,14 @@ class LoginViewModel: ObservableObject {
     @Published var phoneNumberText: String = ""
     @Published var otpText: String = ""
     @Published var emailText: String = "baris@admin.bowlShopSwiftUI.com"
+    @Published var isLoading: Bool = false
     
     @Published var warningPhoneNumberText: String = ""
     @Published var warningOtpText: String = ""
     @Published var warningEmailText: String = ""
+    
+    @Published var isRegisterViewActive = false
+
     
     //@Published var selectedCountry = CountriesQuery.Data.Country(code: "DE", name: "Germany", emoji: "🇩🇪", phone: "49")
    
@@ -53,6 +57,7 @@ class LoginViewModel: ObservableObject {
         }
         warningPhoneNumberText = ""
         loginStep = .otp
+    
         
         // For testing we define it true, when the real message is required we need to make it false
         //Auth.auth().settings?.isAppVerificationDisabledForTesting = true
@@ -87,7 +92,14 @@ class LoginViewModel: ObservableObject {
             return
         }
         warningOtpText = ""
+        isLoading = true
         
+        DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
+            withAnimation(.easeInOut){
+                self.isLoading = false
+                self.isRegisterViewActive = true
+            }
+        }
 //        Auth.auth().signIn(withEmail: emailText, password: otpText){ [weak self] (result, error) in
 //         if let error = error {
 //             self?.warningOtpText = error.localizedDescription

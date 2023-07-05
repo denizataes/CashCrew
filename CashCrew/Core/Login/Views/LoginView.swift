@@ -113,6 +113,7 @@ struct LoginView_Previews: PreviewProvider {
 struct NeumorphicStyleTextField: View {
     var textField: TextField<Text>?
     var passwordField: SecureField<Text>?
+    var isNumber: Bool = false
     var imageName: String
     var body: some View {
         HStack {
@@ -120,6 +121,8 @@ struct NeumorphicStyleTextField: View {
                 .foregroundColor(.darkShadow)
             if textField != nil{
                 textField
+                    .keyboardType(isNumber ? .numberPad : .default)
+                
             }
             else{
                 passwordField
