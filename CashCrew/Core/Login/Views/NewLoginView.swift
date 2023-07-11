@@ -19,26 +19,33 @@ struct NewLoginView: View {
     var body: some View {
         
         ZStack{
-            LinearGradient(colors: [Color(hex: "#f3ee77"), .purple], startPoint: .bottom, endPoint: .top)
-                .opacity(0.7)
-                .ignoresSafeArea()
 
             
-            // Login Views
-            VStack{
-                headerView
-                ZStack{
-                    phoneNumberView
-                    otpView
-                }
+            if vm.isRegisterViewActive {
+                RegisterView()
+                    .transition(.move(edge: .leading))
+            }else{
                 
-                keyboardView
+                LinearGradient(colors: [Color(hex: "#f3ee77"), .purple], startPoint: .bottom, endPoint: .top)
+                    .opacity(0.7)
+                    .ignoresSafeArea()
+
+                // Login Views
+                VStack{
+                    headerView
+                    ZStack{
+                        phoneNumberView
+                        otpView
+                    }
+                    
+                    keyboardView
+                }
+                .cornerRadius(animTrans ? 29 : 0)
+                .clipped()
+                .scaleEffect(animTrans ? 0.29 : 1)
+                .rotation3DEffect(.degrees(animTrans ? -90 : 0), axis:(x: 0, y: 1, z: 0))
+                .offset(x: animTrans ? -230 : 0)
             }
-            .cornerRadius(animTrans ? 29 : 0)
-            .clipped()
-            .scaleEffect(animTrans ? 0.29 : 1)
-            .rotation3DEffect(.degrees(animTrans ? -90 : 0), axis:(x: 0, y: 1, z: 0))
-//            .offset(x: animTrans ? -230 : 0)
 //            .onReceive(vm.$userSession) { user in
 //                if user != nil {
 //                    withAnimation(.easeInOut(duration: 1.4)){
@@ -46,6 +53,7 @@ struct NewLoginView: View {
 //                    }
 //                }
 //            }
+            
             
 //            if vm.userSession != nil {
 //                ProfileView(isUserProfileSaved: $isUserProfileSaved, gradientBackgroundVisibility: false)
@@ -65,11 +73,7 @@ struct NewLoginView: View {
             }
         }
      
-        
-        if vm.isRegisterViewActive {
-            RegisterView()
-                .transition(.move(edge: .leading))
-        }
+  
         
     }
 }
@@ -152,7 +156,7 @@ extension NewLoginView {
                     Divider()
                         .background(.primary)
                         .padding(.top, 0)
-                        .padding(.trailing, 7)
+                        .padding(.trailing)
                     
                 }
                 .foregroundColor(Color(.darkGray))

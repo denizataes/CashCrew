@@ -21,9 +21,12 @@ struct RegisterView: View {
     
     var body: some View {
             ZStack{
-                LinearGradient(colors: [.purple, Color(hex: "#f3ee77")], startPoint: .bottom, endPoint: .top)
-                    .opacity(0.05)
-                    .ignoresSafeArea()
+//                LinearGradient(colors: [Color(hex: "#78C1F3"),
+//                                        Color(hex: "#9BE8D8"),
+//                                        Color(hex: "#E2F6CA"),
+//
+//                                       ], startPoint: .bottom, endPoint: .top)
+
                 
                 VStack(alignment: .leading){
                     VStack(alignment: .leading){
@@ -35,7 +38,8 @@ struct RegisterView: View {
                             .font(.system(size: 30))
                         
                     }
-                    .shadow(color: Color(hex: "#f3ee77").opacity(0.5), radius: 1)
+                    .foregroundColor(.black)
+                    //.shadow(color: Color(hex: "#f3ee77").opacity(0.5), radius: 1)
                     .padding(.top, 10)
                     .padding(.bottom, 50)
                     
@@ -47,7 +51,7 @@ struct RegisterView: View {
                             .clipShape(Rectangle())
                             .cornerRadius(10)
                             .aspectRatio(contentMode: .fill)
-                            .foregroundColor(.gray)
+                            .foregroundColor(.blue)
                             .onTapGesture {
                                 withAnimation {
                                     showImagePicker.toggle()
@@ -81,7 +85,7 @@ struct RegisterView: View {
                     
                     VStack(alignment: .leading) {
                         HStack {
-                            NeumorphicStyleTextField(textField: TextField("Kullanıcı Adı", text: $userName), imageName: "person")
+                                NeumorphicStyleTextField(textField: TextField("Kullanıcı Adı", text: $userName), imageName: "person")
 
                         }
                         .padding(.bottom)

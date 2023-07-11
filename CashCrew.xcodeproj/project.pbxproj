@@ -12,6 +12,9 @@
 		A012CF222A55E69E005E1EE8 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A012CF212A55E69E005E1EE8 /* RegisterView.swift */; };
 		A012CF242A55E6A9005E1EE8 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A012CF232A55E6A9005E1EE8 /* RegisterViewModel.swift */; };
 		A012CF262A55F614005E1EE8 /* CustomLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A012CF252A55F614005E1EE8 /* CustomLoadingView.swift */; };
+		A012CF2A2A5DC9DC005E1EE8 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A012CF292A5DC9DC005E1EE8 /* MainTabView.swift */; };
+		A012CF312A5DCC42005E1EE8 /* VacationCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A012CF302A5DCC42005E1EE8 /* VacationCellView.swift */; };
+		A012CF332A5DD157005E1EE8 /* MainVacationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A012CF322A5DD157005E1EE8 /* MainVacationView.swift */; };
 		A0776CEF2A5489A6008ECC50 /* CashCrewApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0776CEE2A5489A6008ECC50 /* CashCrewApp.swift */; };
 		A0776CF12A5489A6008ECC50 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0776CF02A5489A6008ECC50 /* ContentView.swift */; };
 		A0776CF32A5489A7008ECC50 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0776CF22A5489A7008ECC50 /* Assets.xcassets */; };
@@ -27,6 +30,9 @@
 		A012CF212A55E69E005E1EE8 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		A012CF232A55E6A9005E1EE8 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		A012CF252A55F614005E1EE8 /* CustomLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLoadingView.swift; sourceTree = "<group>"; };
+		A012CF292A5DC9DC005E1EE8 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		A012CF302A5DCC42005E1EE8 /* VacationCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacationCellView.swift; sourceTree = "<group>"; };
+		A012CF322A5DD157005E1EE8 /* MainVacationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVacationView.swift; sourceTree = "<group>"; };
 		A0776CEB2A5489A6008ECC50 /* CashCrew.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CashCrew.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0776CEE2A5489A6008ECC50 /* CashCrewApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashCrewApp.swift; sourceTree = "<group>"; };
 		A0776CF02A5489A6008ECC50 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -73,6 +79,61 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		A012CF272A5DC9C0005E1EE8 /* Tab */ = {
+			isa = PBXGroup;
+			children = (
+				A012CF282A5DC9C8005E1EE8 /* Views */,
+			);
+			path = Tab;
+			sourceTree = "<group>";
+		};
+		A012CF282A5DC9C8005E1EE8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A012CF292A5DC9DC005E1EE8 /* MainTabView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A012CF2B2A5DCB84005E1EE8 /* Vacation */ = {
+			isa = PBXGroup;
+			children = (
+				A012CF2F2A5DCBA7005E1EE8 /* ViewModels */,
+				A012CF2E2A5DCBA4005E1EE8 /* Views */,
+			);
+			path = Vacation;
+			sourceTree = "<group>";
+		};
+		A012CF2C2A5DCB87005E1EE8 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		A012CF2D2A5DCB8B005E1EE8 /* NewVacation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = NewVacation;
+			sourceTree = "<group>";
+		};
+		A012CF2E2A5DCBA4005E1EE8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A012CF302A5DCC42005E1EE8 /* VacationCellView.swift */,
+				A012CF322A5DD157005E1EE8 /* MainVacationView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A012CF2F2A5DCBA7005E1EE8 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		A0776CE22A5489A6008ECC50 = {
 			isa = PBXGroup;
 			children = (
@@ -117,6 +178,10 @@
 		A0776CFC2A548A62008ECC50 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				A012CF2D2A5DCB8B005E1EE8 /* NewVacation */,
+				A012CF2C2A5DCB87005E1EE8 /* Profile */,
+				A012CF2B2A5DCB84005E1EE8 /* Vacation */,
+				A012CF272A5DC9C0005E1EE8 /* Tab */,
 				A012CF1E2A55E678005E1EE8 /* Register */,
 				A0776D032A548AC9008ECC50 /* Login */,
 			);
@@ -262,9 +327,12 @@
 				A0776D092A548B65008ECC50 /* View_Extensions.swift in Sources */,
 				A0776D0C2A548F7E008ECC50 /* Color.swift in Sources */,
 				A0776CEF2A5489A6008ECC50 /* CashCrewApp.swift in Sources */,
+				A012CF2A2A5DC9DC005E1EE8 /* MainTabView.swift in Sources */,
+				A012CF332A5DD157005E1EE8 /* MainVacationView.swift in Sources */,
 				A012CF222A55E69E005E1EE8 /* RegisterView.swift in Sources */,
 				A012CF1B2A54ADCC005E1EE8 /* NewLoginView.swift in Sources */,
 				A012CF242A55E6A9005E1EE8 /* RegisterViewModel.swift in Sources */,
+				A012CF312A5DCC42005E1EE8 /* VacationCellView.swift in Sources */,
 				A012CF262A55F614005E1EE8 /* CustomLoadingView.swift in Sources */,
 				A012CF1D2A54ADDF005E1EE8 /* LoginViewModel.swift in Sources */,
 			);

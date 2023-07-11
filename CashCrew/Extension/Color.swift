@@ -10,6 +10,14 @@ import SwiftUI
 
 extension Color {
     
+    static var random: Color {
+           let randomRed = Double.random(in: 0...1)
+           let randomGreen = Double.random(in: 0...1)
+           let randomBlue = Double.random(in: 0...1)
+           return Color(red: randomRed, green: randomGreen, blue: randomBlue)
+       }
+    
+    
     init(hex: String) {
         let scanner = Scanner(string: hex)
         _ = scanner.scanString("#")
