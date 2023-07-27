@@ -10,44 +10,51 @@ import SwiftUI
 struct LoginView: View {
     @State private var userName: String = ""
     @State private var password: String = ""
+    
+    @State private var offset = CGSize.zero // Geçiş yaparken yana kayma için offset değişkeni ekliyoruz
+    
+    
     var body: some View {
-        NavigationView{
+        
+        NavigationView {
             VStack(alignment: .leading){
-                VStack(alignment: .leading){
-                    Text("Hey,")
-                    Text("Giriş Yap!")
-                }
-                .font(.system(size: 48))
-                .bold()
-                .shadow(color: Color(hex: "#f3ee77").opacity(0.5), radius: 1)
-                .padding(.top, 100)
-                .padding(.bottom, 50)
                 
                 
-                HStack{
-                    Button {
+                VStack{
+                    Image("money")
+                        .resizable()
+                        .frame(width: 120, height: 120)
+                        .padding(.bottom)
+                        .padding(.top)
+                    HStack{
                         
-                    } label: {
-                        Text("Kaydol")
-                            .foregroundColor(Color(.darkGray))
-                    }
-
-            
-                    Text("/")
-                        .font(.system(size: 20))
-                        .bold()
-                        .foregroundColor(.purple)
-                    
-                    Button {
                         
-                    } label: {
+                        NavigationLink {
+                            RegisterView()
+                        } label: {
+                            Text("Kaydol")
+                                .font(.system(size: 24))
+                                .foregroundColor(Color(.darkGray))
+                        }
+                        
+                        
+                        
+                        Text("/")
+                            .font(.system(size: 20))
+                            .bold()
+                            .foregroundColor(.purple)
+                        
+                        
                         Text("Giriş Yap")
+                            .font(.system(size: 24))
                             .bold()
                             .foregroundColor(.black)
+                        
+                        
+                        
                     }
-
-                    
                 }
+                .hAlign(.center)
                 .font(.system(size: 20))
                 .padding(.bottom)
                 
@@ -91,16 +98,9 @@ struct LoginView: View {
                 
                 Spacer()
             }
-            .padding(36)
-            .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
-                    Image(systemName: "moon.fill")
-                        .resizable()
-                        .frame(width: 24, height: 24)
-                        .padding(.leading)
-                    
-                }
-            }
+            .padding()
+            .navigationTitle("Giriş Yap")
+            
         }
     }
 }
@@ -128,12 +128,12 @@ struct NeumorphicStyleTextField: View {
             else{
                 passwordField
             }
-            }
-            .padding()
-            .foregroundColor(.black)
-            .background(Color.background.opacity(0.05))
-            .cornerRadius(6)
-//            .shadow(color: Color.darkShadow.opacity(0.2), radius: 3, x: 2, y: 2)
-//            .shadow(color: Color.lightShadow.opacity(0.2), radius: 3, x: -2, y: -2)
         }
+        .padding()
+        .foregroundColor(.black)
+        .background(Color.background.opacity(0.05))
+        .cornerRadius(6)
+        //            .shadow(color: Color.darkShadow.opacity(0.2), radius: 3, x: 2, y: 2)
+        //            .shadow(color: Color.lightShadow.opacity(0.2), radius: 3, x: -2, y: -2)
+    }
 }

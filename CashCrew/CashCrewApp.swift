@@ -11,7 +11,7 @@ import SwiftUI
 struct CashCrewApp: App {
     var body: some Scene {
         WindowGroup {
-            NewLoginView()
+            LoginView()
         }
     }
 }
