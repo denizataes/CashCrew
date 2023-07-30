@@ -14,6 +14,10 @@
 		A012CF2A2A5DC9DC005E1EE8 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A012CF292A5DC9DC005E1EE8 /* MainTabView.swift */; };
 		A012CF312A5DCC42005E1EE8 /* VacationCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A012CF302A5DCC42005E1EE8 /* VacationCellView.swift */; };
 		A012CF332A5DD157005E1EE8 /* MainVacationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A012CF322A5DD157005E1EE8 /* MainVacationView.swift */; };
+		A0203ADA2A76D6AE00AEFE48 /* PaymentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0203AD92A76D6AE00AEFE48 /* PaymentView.swift */; };
+		A0203AE02A76D73A00AEFE48 /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0203ADF2A76D73A00AEFE48 /* UserView.swift */; };
+		A0203AE22A76DA4700AEFE48 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0203AE12A76DA4700AEFE48 /* Users.swift */; };
+		A0203AE52A76DB3200AEFE48 /* UserRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0203AE42A76DB3200AEFE48 /* UserRowView.swift */; };
 		A0776CEF2A5489A6008ECC50 /* CashCrewApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0776CEE2A5489A6008ECC50 /* CashCrewApp.swift */; };
 		A0776CF12A5489A6008ECC50 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0776CF02A5489A6008ECC50 /* ContentView.swift */; };
 		A0776CF32A5489A7008ECC50 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0776CF22A5489A7008ECC50 /* Assets.xcassets */; };
@@ -31,6 +35,10 @@
 		A012CF292A5DC9DC005E1EE8 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		A012CF302A5DCC42005E1EE8 /* VacationCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacationCellView.swift; sourceTree = "<group>"; };
 		A012CF322A5DD157005E1EE8 /* MainVacationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVacationView.swift; sourceTree = "<group>"; };
+		A0203AD92A76D6AE00AEFE48 /* PaymentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentView.swift; sourceTree = "<group>"; };
+		A0203ADF2A76D73A00AEFE48 /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
+		A0203AE12A76DA4700AEFE48 /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
+		A0203AE42A76DB3200AEFE48 /* UserRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRowView.swift; sourceTree = "<group>"; };
 		A0776CEB2A5489A6008ECC50 /* CashCrew.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CashCrew.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0776CEE2A5489A6008ECC50 /* CashCrewApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashCrewApp.swift; sourceTree = "<group>"; };
 		A0776CF02A5489A6008ECC50 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -132,6 +140,55 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+		A0203AD62A76D69B00AEFE48 /* Payment */ = {
+			isa = PBXGroup;
+			children = (
+				A0203AD82A76D6A600AEFE48 /* ViewModel */,
+				A0203AD72A76D6A300AEFE48 /* View */,
+			);
+			path = Payment;
+			sourceTree = "<group>";
+		};
+		A0203AD72A76D6A300AEFE48 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A0203AD92A76D6AE00AEFE48 /* PaymentView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A0203AD82A76D6A600AEFE48 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A0203ADC2A76D72800AEFE48 /* Users */ = {
+			isa = PBXGroup;
+			children = (
+				A0203ADE2A76D73100AEFE48 /* ViewModel */,
+				A0203ADD2A76D72C00AEFE48 /* View */,
+			);
+			path = Users;
+			sourceTree = "<group>";
+		};
+		A0203ADD2A76D72C00AEFE48 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A0203ADF2A76D73A00AEFE48 /* UserView.swift */,
+				A0203AE42A76DB3200AEFE48 /* UserRowView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A0203ADE2A76D73100AEFE48 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		A0776CE22A5489A6008ECC50 = {
 			isa = PBXGroup;
 			children = (
@@ -176,6 +233,8 @@
 		A0776CFC2A548A62008ECC50 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				A0203ADC2A76D72800AEFE48 /* Users */,
+				A0203AD62A76D69B00AEFE48 /* Payment */,
 				A012CF2D2A5DCB8B005E1EE8 /* NewVacation */,
 				A012CF2C2A5DCB87005E1EE8 /* Profile */,
 				A012CF2B2A5DCB84005E1EE8 /* Vacation */,
@@ -189,6 +248,7 @@
 		A0776CFD2A548A65008ECC50 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A0203AE12A76DA4700AEFE48 /* Users.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -326,11 +386,15 @@
 				A0776CEF2A5489A6008ECC50 /* CashCrewApp.swift in Sources */,
 				A012CF2A2A5DC9DC005E1EE8 /* MainTabView.swift in Sources */,
 				A012CF332A5DD157005E1EE8 /* MainVacationView.swift in Sources */,
+				A0203AE22A76DA4700AEFE48 /* Users.swift in Sources */,
+				A0203ADA2A76D6AE00AEFE48 /* PaymentView.swift in Sources */,
 				A012CF222A55E69E005E1EE8 /* RegisterView.swift in Sources */,
 				A012CF242A55E6A9005E1EE8 /* RegisterViewModel.swift in Sources */,
 				A012CF312A5DCC42005E1EE8 /* VacationCellView.swift in Sources */,
 				A012CF262A55F614005E1EE8 /* CustomLoadingView.swift in Sources */,
 				A012CF1D2A54ADDF005E1EE8 /* LoginViewModel.swift in Sources */,
+				A0203AE52A76DB3200AEFE48 /* UserRowView.swift in Sources */,
+				A0203AE02A76D73A00AEFE48 /* UserView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -71,28 +71,27 @@ struct RegisterView: View {
                         }
                     }
                     .hAlign(.center)
-                    .padding(.bottom, 36)
+                    .padding(.bottom)
                     .transition(.scale)
                 
+                Text("Profil Fotoğrafı Seç")
+                    .font(.footnote)
+                    .foregroundColor(.gray)
+                    .hAlign(.center)
             }
             
             
             
             
             VStack(alignment: .leading) {
-                HStack {
-                    NeumorphicStyleTextField(textField: TextField("Kullanıcı Adı", text: $userName), imageName: "person")
-                    
-                }
-                .padding(.bottom)
                 
-                HStack {
-                    NeumorphicStyleTextField(textField: TextField("IBAN", text: $iban), imageName: "dollarsign")
-                }
-                .padding(.bottom)
+                NeumorphicStyleTextField(textField: TextField("Kullanıcı Adı", text: $userName), imageName: "person")
+                
+                NeumorphicStyleTextField(passwordField: SecureField("Şifre", text: $password), imageName: "lock")
                 
                 
-                
+                NeumorphicStyleTextField(textField: TextField("IBAN", text: $iban), imageName: "dollarsign")
+                    .padding(.bottom)
             }
             
             
@@ -111,8 +110,8 @@ struct RegisterView: View {
                 }
                 .fillView(Color(hex: "#f3ee77"))
             }
-
-       
+            
+            
             
             Spacer()
         }
@@ -143,7 +142,7 @@ struct RegisterView: View {
 
 struct RegisterView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView()
+        RegisterView()
     }
 }
 
