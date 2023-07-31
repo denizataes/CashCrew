@@ -131,7 +131,6 @@ struct NeumorphicStyleTextField: View {
         }
         .padding()
         .foregroundColor(.black)
-        .background(Color.background.opacity(0.05))
         .cornerRadius(6)
         //            .shadow(color: Color.darkShadow.opacity(0.2), radius: 3, x: 2, y: 2)
         //            .shadow(color: Color.lightShadow.opacity(0.2), radius: 3, x: -2, y: -2)

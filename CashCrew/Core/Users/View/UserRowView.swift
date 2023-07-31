@@ -8,34 +8,32 @@
 import SwiftUI
 
 struct UserRowView: View {
-    var user: User = User(UserID: 1, FirstName: "Deniz Ata", LastName: "EŞ", IBAN: "TR01241242141", ProfilePictureURL: "ata")
-    @State var isSelected: Bool = true
+    var user: User
+    @Binding var isSelected: Bool
+    
     var body: some View {
-        
-        
         Button {
-            self.isSelected.toggle()
+            isSelected.toggle()
         } label: {
-            
-            ZStack{
-                if isSelected{
+            ZStack {
+                if isSelected {
                     selectedUserBackground
                         .cornerRadius(10)
                         .transition(.slide)
                 }
-                HStack{
-                    
-                    HStack{
+                HStack {
+                    HStack {
                         Image(user.ProfilePictureURL)
                             .resizable()
                             .scaledToFill()
-                            .clipShape(Circle())
                             .frame(width: 60, height: 60)
+                            .clipShape(Circle())
                             .shadow(radius: isSelected ? 0 : 2)
                         
-                        VStack{
+                        VStack {
                             Text("\(user.FirstName) \(user.LastName)")
                                 .bold()
+                                .foregroundColor(Color("mainColor"))
                         }
                         .transition(.slide)
                     }
@@ -43,42 +41,26 @@ struct UserRowView: View {
                     
                     Spacer()
                     
-                    
-                    Button {
-                        withAnimation {
-                            self.isSelected.toggle()
-                        }
-                        
-                    } label: {
-                        
-                        Image(systemName:
-                                isSelected ? "person.crop.circle.badge.minus" : "person.crop.circle.badge.plus")
+                    Image(systemName: isSelected ? "checkmark" : "circle")
                         .resizable()
                         .shadow(radius: isSelected ? 2 : 0)
-                        .frame(width: 24, height: 20)
-                        .foregroundColor(isSelected ? .red : .green)
-                        
-                    }
-                    
-                    
+                        .frame(width: 24, height: 24)
+                        .foregroundColor(isSelected ? .green : .purple)
                 }
-                .foregroundColor(.black)
                 .padding(.horizontal)
             }
             .frame(maxHeight: 80)
         }
-        
-        
-        
     }
 }
 
 struct UserRowView_Previews: PreviewProvider {
     static var previews: some View {
-        UserRowView()
+        UserRowView(user: User(UserID: 1, FirstName: "Deniz Ata", LastName: "EŞ", IBAN: "TR01241242141", ProfilePictureURL: "ata"), isSelected: .constant(false))
             .previewLayout(.sizeThatFits)
     }
 }
+
 
 
 extension UserRowView{

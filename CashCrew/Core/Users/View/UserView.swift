@@ -8,31 +8,51 @@
 import SwiftUI
 
 struct UserView: View {
+    @State private var selectedUsers: [Bool] = Array(repeating: false, count: exampleUsers.count)
     
     var body: some View {
-        VStack{
-            Text("Kimler İçin")
-                .bold()
+        VStack {
+            HStack {
+                Spacer()
+                Text("Kimler İçin")
+                    .bold()
+                    .foregroundColor(Color("mainColor"))
+                Spacer()
+                
+                Button {
+                    withAnimation {
+                        let allSelected = !selectedUsers.contains(false)
+                        selectedUsers = Array(repeating: !allSelected, count: exampleUsers.count)
+                    }
+                } label: {
+                    Image(systemName: selectedUsers.contains(false) ? "person.2.fill" : "person.2.slash.fill")
+                        .foregroundColor(.purple)
+                }
+                .padding(.trailing)
+            }
             
-            ScrollView(showsIndicators: false){
-                VStack(spacing: 3){
-
-                    ForEach(exampleUsers){user in
-                        UserRowView(user: user, isSelected: false)
+            ScrollView(showsIndicators: false) {
+                VStack(spacing: 4) {
+                    ForEach(exampleUsers.indices, id: \.self) { index in
+                        UserRowView(user: exampleUsers[index], isSelected: $selectedUsers[index])
                     }
                 }
             }
-            
         }
         .hAlign(.leading)
         .padding()
         .frame(maxHeight: 400)
-        .background(.gray.opacity(0.1))
+        .background(Color.gray.opacity(0.1))
         .cornerRadius(50)
-        
-        
     }
 }
+
+
+
+
+
+
+
 
 struct UserView_Previews: PreviewProvider {
     static var previews: some View {
