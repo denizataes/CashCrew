@@ -10,15 +10,18 @@ import SwiftUI
 struct LoginView: View {
     @State private var userName: String = ""
     @State private var password: String = ""
-    
+    @State var isRegister: Bool = false
     @State private var offset = CGSize.zero // Geçiş yaparken yana kayma için offset değişkeni ekliyoruz
     
     
     var body: some View {
         
-        NavigationView {
             VStack(alignment: .leading){
-                
+                Text("Giriş Yap")
+                    .font(.system(size: 48))
+                    .foregroundColor(Color("mainColor"))
+                    .bold()
+                    .padding()
                 
                 VStack{
                     Image("money")
@@ -29,8 +32,8 @@ struct LoginView: View {
                     HStack{
                         
                         
-                        NavigationLink {
-                            RegisterView()
+                        Button {
+                            isRegister.toggle()
                         } label: {
                             Text("Kaydol")
                                 .font(.system(size: 24))
@@ -48,7 +51,7 @@ struct LoginView: View {
                         Text("Giriş Yap")
                             .font(.system(size: 24))
                             .bold()
-                            .foregroundColor(.black)
+                            .foregroundColor(Color("mainColor"))
                         
                         
                         
@@ -78,7 +81,7 @@ struct LoginView: View {
                     
                 }
                 .font(.system(size: 20))
-                .padding(.top)
+                .padding()
                 
                 Button {
                     
@@ -94,20 +97,20 @@ struct LoginView: View {
                     }
                     .fillView(Color(hex: "#f3ee77"))
                 }
-                .padding(.top, 20)
+                .padding()
                 
                 Spacer()
             }
+            .fullScreenCover(isPresented: $isRegister){
+                RegisterView(isRegister: $isRegister)
+            }
             .padding()
-            .navigationTitle("Giriş Yap")
-            
-        }
     }
 }
 
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView()
+        LoginView(isRegister: false)
     }
 }
 struct NeumorphicStyleTextField: View {
@@ -130,7 +133,7 @@ struct NeumorphicStyleTextField: View {
             }
         }
         .padding()
-        .foregroundColor(.black)
+        .foregroundColor(Color("mainColor"))
         .cornerRadius(6)
         //            .shadow(color: Color.darkShadow.opacity(0.2), radius: 3, x: 2, y: 2)
         //            .shadow(color: Color.lightShadow.opacity(0.2), radius: 3, x: -2, y: -2)

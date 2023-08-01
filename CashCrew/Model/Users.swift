@@ -7,15 +7,12 @@
 
 import Foundation
 
-struct User: Identifiable {
-    var UserID: Int
-    var FirstName: String
-    var LastName: String
-    var IBAN: String
-    var ProfilePictureURL: String
-    
-    // Identifiable protokolü için kimlik özelliği belirliyoruz
-    var id: Int { UserID }
+struct User {
+    let UserID: Int
+    let FirstName: String
+    let LastName: String
+    let IBAN: String
+    let ProfilePictureURL: String
 }
 
 // Örnek kullanıcıların listesi

@@ -10,17 +10,23 @@ import SwiftUI
 struct MainVacationView: View {
     var body: some View {
 
-        ScrollView(.vertical) {
+        ScrollView(.vertical, showsIndicators: false) {
             LazyVGrid(columns: [
                 GridItem(.fixed(150)),
                 GridItem(.fixed(150))
             ]) {
                 ForEach(0..<10, id: \.self) { _ in
-                    VacationCellView(color: Color.random)
-                        .padding(.top,7)
+                    NavigationLink {
+                        VacationView()
+                    } label: {
+                        VacationCellView(color: Color.random)
+                            .padding(.top,7)
+                    }
+
                 }
             }
         }
+        
         .padding()
         .navigationTitle("Tatillerim 🏖️")
         .navigationBarTitleDisplayMode(.large)

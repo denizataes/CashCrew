@@ -100,6 +100,7 @@ struct VacationCellView: View {
         .padding()
         .background(color.opacity(0.2))
         .cornerRadius(10)
+        .foregroundColor(Color("mainColor"))
         .frame(maxWidth: 150)
         //.shadow(color: .green, radius: 0.5)
     

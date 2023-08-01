@@ -12,6 +12,7 @@ struct PaymentView: View {
     @State private var title: String = ""
     @State private var description: String = ""
     @State private var selectedDate = Date()
+    @Environment(\.dismiss) private var dismiss
     
     var dateFormatter: DateFormatter {
         let formatter = DateFormatter()
@@ -63,7 +64,19 @@ struct PaymentView: View {
         }
         .padding(.top, 12)
         .toolbar {
-            ToolbarItem(placement: .navigationBarTrailing) {
+            ToolbarItemGroup(placement: .navigationBarLeading) {
+                Button {
+                    dismiss()
+                } label: {
+                    Text("Geri")
+                        .foregroundColor(Color("mainColor"))
+                        .bold()
+                }
+                
+                Spacer()
+            }
+            
+            ToolbarItemGroup(placement: .navigation) {
                 Button {
                     isDatePickerShown = true
                 } label: {
@@ -73,9 +86,23 @@ struct PaymentView: View {
                         Text(selectedDate, formatter: dateFormatter)
                             .foregroundColor(.green)
                     }
+                    .padding(.leading, 60)
+                }
+                
+                Spacer() 
+            }
+            
+            ToolbarItemGroup(placement: .navigationBarTrailing) {
+                Button {
+                    dismiss()
+                } label: {
+                    Text("Kaydet")
+                        .foregroundColor(Color("mainColor"))
+                        .bold()
                 }
             }
         }
+
         .navigationTitle("Ödeme Ekle")
         .padding()
     }
