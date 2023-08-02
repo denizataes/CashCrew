@@ -26,7 +26,7 @@ struct UserView: View {
                     }
                 } label: {
                     Image(systemName: selectedUsers.contains(false) ? "person.2.fill" : "person.2.slash.fill")
-                        .foregroundColor(.purple)
+                        .foregroundColor(selectedUsers.contains(false) ? .gray : .green)
                 }
                 .padding(.trailing)
             }
@@ -41,7 +41,7 @@ struct UserView: View {
         }
         .hAlign(.leading)
         .padding()
-        .frame(maxHeight: 400)
+        .frame(maxHeight: 450)
         .background(Color.gray.opacity(0.1))
         .cornerRadius(50)
     }
@@ -56,6 +56,8 @@ struct UserView: View {
 
 struct UserView_Previews: PreviewProvider {
     static var previews: some View {
-        UserView()
+        NavigationView{
+            PaymentView()
+        }
     }
 }

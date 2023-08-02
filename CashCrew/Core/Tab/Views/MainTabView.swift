@@ -29,7 +29,7 @@ struct MainTabView: View {
          
             
             NavigationView{
-                Text("Profilim")
+                ProfileView()
             }
                 .tabItem {
                     Image(systemName: "person.crop.circle")

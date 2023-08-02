@@ -117,25 +117,37 @@ struct NeumorphicStyleTextField: View {
     var textField: TextField<Text>?
     var passwordField: SecureField<Text>?
     var isNumber: Bool = false
+    var isUnderline: Bool = false
     var imageName: String
+    var imageColor: Color = .green
     var body: some View {
-        HStack {
-            Image(systemName: imageName)
-                .foregroundColor(.green)
-                .bold()
-            if textField != nil{
-                textField
-                    .keyboardType(isNumber ? .numberPad : .default)
-                
+        
+        VStack{
+            HStack {
+                Image(systemName: imageName)
+                    .foregroundColor(imageColor)
+                    .bold()
+                if textField != nil{
+                    textField
+                        .keyboardType(isNumber ? .numberPad : .default)
+                    
+                }
+                else{
+                    passwordField
+                }
             }
-            else{
-                passwordField
+            .padding()
+            .foregroundColor(Color("mainColor"))
+            .cornerRadius(6)
+            //            .shadow(color: Color.darkShadow.opacity(0.2), radius: 3, x: 2, y: 2)
+            //            .shadow(color: Color.lightShadow.opacity(0.2), radius: 3, x: -2, y: -2)
+            
+            if isUnderline{
+                Rectangle()
+                        .frame(height: 1)
+                        .foregroundColor(.gray)
             }
         }
-        .padding()
-        .foregroundColor(Color("mainColor"))
-        .cornerRadius(6)
-        //            .shadow(color: Color.darkShadow.opacity(0.2), radius: 3, x: 2, y: 2)
-        //            .shadow(color: Color.lightShadow.opacity(0.2), radius: 3, x: -2, y: -2)
+      
     }
 }

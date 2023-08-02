@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import PhotosUI
 
 struct PaymentView: View {
     @State private var isDatePickerShown = false
@@ -14,35 +15,139 @@ struct PaymentView: View {
     @State private var selectedDate = Date()
     @Environment(\.dismiss) private var dismiss
     
+    @State var showImagePicker: Bool = false
+    @State var photoItem: PhotosPickerItem?
+    @State var userProfilePicData: Data?
+    
     var dateFormatter: DateFormatter {
         let formatter = DateFormatter()
-        formatter.dateStyle = .medium
-        formatter.timeStyle = .none
-        formatter.timeZone = TimeZone(identifier: "Europe/Istanbul")
+        formatter.dateFormat = "dd MMMM yyyy • EE • HH:MM"
+        formatter.locale = Locale(identifier: "tr_TR")
         return formatter
     }
     
     var body: some View {
         VStack {
-            HStack{
+            VStack{
                 VStack{
-                    NeumorphicStyleTextField(textField: TextField("Başlık", text: $title), imageName: "pencil.line")
+                    HStack(spacing: 0){
+                        NeumorphicStyleTextField(textField: TextField("Başlık", text: $title),isUnderline: true, imageName: "pencil.line", imageColor: Color(.systemGray))
                         
+                        Spacer()
+                        
+                        
+                        if let userProfilePicData, let image = UIImage(data: userProfilePicData) {
+                            
+                            ZStack(alignment: .topTrailing){
+                                
+                                Image(uiImage: image)
+                                    .resizable()
+                                    .frame(width: 80, height: 80)
+                                    .clipShape(Rectangle())
+                                    .cornerRadius(10)
+                                    .aspectRatio(contentMode: .fill)
+                                    .foregroundColor(.blue)
+                                    .onTapGesture {
+                                        withAnimation {
+                                            showImagePicker.toggle()
+                                        }
+                                    }
+                                    .shadow(radius: 4)
+                                
+                                
+                                Button {
+                                    withAnimation {
+                                        self.userProfilePicData = nil
+                                    }
+                                    
+                                } label: {
+                                    Image(systemName: "multiply")
+                                        .resizable()
+                                        .frame(width: 12, height: 12)
+                                        .padding(8)
+                                        .foregroundColor(.red)
+                                        .clipShape(Circle())
+                                        .offset(x: 5, y: -25)
+                                        .shadow(radius: 2)
+                                }
+                            }
+                            
+                        }
+                        else{
+                            Image(systemName: "photo.on.rectangle.angled")
+                                .resizable()
+                                .foregroundColor(Color(.darkGray))
+                                .frame(width: 24, height: 24)
+                                .clipShape(Rectangle())
+                                .aspectRatio(contentMode: .fill)
+                                .foregroundColor(Color("mainColor"))
+                                .onTapGesture {
+                                    withAnimation {
+                                        showImagePicker.toggle()
+                                    }
+                                }
+                                .padding(.trailing)
+                            
+                            
+                        }
+                        
+                        
+                    }
+                    .transition(.slide)
                     
-                    NeumorphicStyleTextField(textField: TextField("Fiyat", text: $description), imageName: "turkishlirasign")
-                        
+                    
+                    NeumorphicStyleTextField(textField: TextField("Fiyat", text: $description), isNumber: true, isUnderline: true, imageName: "turkishlirasign", imageColor: Color(.systemGray))
+                    
+                    
+                    Button {
+                        isDatePickerShown = true
+                    } label: {
+                        VStack{
+                            HStack {
+                                Image(systemName: "calendar")
+                                    .foregroundColor(Color(.systemGray))
+                                Text(selectedDate, formatter: dateFormatter)
+                                    .foregroundColor(Color("mainColor"))
+                                    //.bold()
+                            }
+                            .hAlign(.leading)
+                            .padding()
+                            
+                            Rectangle()
+                                    .frame(height: 1)
+                                    .foregroundColor(.gray)
+                            
+                            
+                        }
+                    }
                     
                 }
-                Image("fiss")
-                    .resizable()
-                    .frame(width: 120, height: 200)
-                    .cornerRadius(5)
-                    .shadow(radius: 5)
+                
+                
                 
             }
-       
+            
             Spacer()
             UserView()
+        }
+        .photosPicker(isPresented: $showImagePicker, selection: $photoItem)
+        .onChange(of: photoItem) { newValue in
+            // MARK: Extracting UIImage from PhotoItem
+            if let newValue{
+                Task{
+                    do{
+                        guard let imageData = try await newValue.loadTransferable(type: Data.self) else{return}
+                        // MARK: UI Must be updated on Main Thread
+                        await MainActor.run {
+                            withAnimation {
+                                userProfilePicData = imageData
+                            }
+                        }
+                    }catch{
+                    }
+                }
+            }
+            
         }
         .sheet(isPresented: $isDatePickerShown) {
             VStack {
@@ -51,6 +156,7 @@ struct PaymentView: View {
                     Button("Seç") {
                         isDatePickerShown.toggle()
                     }
+                    .foregroundColor(.green)
                     .padding(.trailing, 20)
                     .padding(.top, 40)
                 }
@@ -60,7 +166,7 @@ struct PaymentView: View {
                     .labelsHidden()
             }
             .presentationDetents([.height(250)])
-
+            
         }
         .padding(.top, 12)
         .toolbar {
@@ -68,41 +174,29 @@ struct PaymentView: View {
                 Button {
                     dismiss()
                 } label: {
-                    Text("Geri")
-                        .foregroundColor(Color("mainColor"))
-                        .bold()
+                    HStack(spacing: 1){
+                        Image(systemName: "chevron.backward")
+                        Text("Geri")
+                            .bold()
+                    }
+                    .foregroundColor(.green)
                 }
                 
                 Spacer()
             }
             
-            ToolbarItemGroup(placement: .navigation) {
-                Button {
-                    isDatePickerShown = true
-                } label: {
-                    HStack {
-                        Image(systemName: "calendar")
-                            .foregroundColor(.green)
-                        Text(selectedDate, formatter: dateFormatter)
-                            .foregroundColor(.green)
-                    }
-                    .padding(.leading, 60)
-                }
-                
-                Spacer() 
-            }
             
             ToolbarItemGroup(placement: .navigationBarTrailing) {
                 Button {
                     dismiss()
                 } label: {
                     Text("Kaydet")
-                        .foregroundColor(Color("mainColor"))
+                        .foregroundColor(.green)
                         .bold()
                 }
             }
         }
-
+        
         .navigationTitle("Ödeme Ekle")
         .padding()
     }

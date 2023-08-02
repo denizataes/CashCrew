@@ -45,7 +45,7 @@ struct UserRowView: View {
                         .resizable()
                         .shadow(radius: isSelected ? 2 : 0)
                         .frame(width: 24, height: 24)
-                        .foregroundColor(isSelected ? .green : .purple)
+                        .foregroundColor(.green)
                 }
                 .padding(.horizontal)
             }
@@ -56,8 +56,11 @@ struct UserRowView: View {
 
 struct UserRowView_Previews: PreviewProvider {
     static var previews: some View {
-        UserRowView(user: User(UserID: 1, FirstName: "Deniz Ata", LastName: "EŞ", IBAN: "TR01241242141", ProfilePictureURL: "ata"), isSelected: .constant(false))
-            .previewLayout(.sizeThatFits)
+//        UserRowView(user: User(UserID: 1, FirstName: "Deniz Ata", LastName: "EŞ", IBAN: "TR01241242141", ProfilePictureURL: "ata"), isSelected: .constant(false))
+//            .previewLayout(.sizeThatFits)
+        NavigationView{
+            PaymentView()
+        }
     }
 }
 

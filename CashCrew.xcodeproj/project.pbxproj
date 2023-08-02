@@ -28,6 +28,7 @@
 		A08CD7E12A798F960095D7DE /* VacationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08CD7E02A798F960095D7DE /* VacationView.swift */; };
 		A08CD7E32A799F740095D7DE /* PaymentCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08CD7E22A799F740095D7DE /* PaymentCellView.swift */; };
 		A08CD7E52A79A8290095D7DE /* SearchFilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08CD7E42A79A8290095D7DE /* SearchFilterViewModel.swift */; };
+		A08CD7E92A7AF2B00095D7DE /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A08CD7E82A7AF2B00095D7DE /* ProfileView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +54,7 @@
 		A08CD7E02A798F960095D7DE /* VacationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VacationView.swift; sourceTree = "<group>"; };
 		A08CD7E22A799F740095D7DE /* PaymentCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentCellView.swift; sourceTree = "<group>"; };
 		A08CD7E42A79A8290095D7DE /* SearchFilterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFilterViewModel.swift; sourceTree = "<group>"; };
+		A08CD7E82A7AF2B00095D7DE /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,8 @@
 		A012CF2C2A5DCB87005E1EE8 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				A08CD7E72A7AF2520095D7DE /* ViewModel */,
+				A08CD7E62A7AF24B0095D7DE /* View */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -318,6 +322,21 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+		A08CD7E62A7AF24B0095D7DE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A08CD7E82A7AF2B00095D7DE /* ProfileView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A08CD7E72A7AF2520095D7DE /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -400,6 +419,7 @@
 				A012CF222A55E69E005E1EE8 /* RegisterView.swift in Sources */,
 				A012CF242A55E6A9005E1EE8 /* RegisterViewModel.swift in Sources */,
 				A08CD7E32A799F740095D7DE /* PaymentCellView.swift in Sources */,
+				A08CD7E92A7AF2B00095D7DE /* ProfileView.swift in Sources */,
 				A012CF312A5DCC42005E1EE8 /* VacationCellView.swift in Sources */,
 				A08CD7E52A79A8290095D7DE /* SearchFilterViewModel.swift in Sources */,
 				A012CF262A55F614005E1EE8 /* CustomLoadingView.swift in Sources */,
